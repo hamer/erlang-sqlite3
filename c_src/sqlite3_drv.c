@@ -529,8 +529,10 @@ static inline int decode_and_bind_param(
     char_buf_val = driver_alloc((*p_size + 1) * sizeof(char));
     ei_decode_atom(buffer, p_index, char_buf_val);
     if (strncmp(char_buf_val, "null", 5) == 0) {
+      driver_free(char_buf_val);
       result = sqlite3_bind_null(statement, param_index);
     } else {
+      driver_free(char_buf_val);
       output_error(drv, SQLITE_MISUSE, "Non-null atom as parameter");
       return 1;
     }
