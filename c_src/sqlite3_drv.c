@@ -8,9 +8,9 @@
 #endif
 
 #ifdef DEBUG
-static int DEBUG = 1;
+static const int DEBUG = 1;
 #else
-static int DEBUG = 0;
+static const int DEBUG = 0;
 #endif
 
 #define LOG_DEBUG(M, ...) do { \

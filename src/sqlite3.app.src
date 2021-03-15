@@ -1,9 +1,7 @@
-{application, sqlite3,
- [
-  {description, "SQLite3 Interface"},
-  {vsn, "1.1.5"},
-  {modules, []},
-  {registered, []},
-  {applications, [kernel, stdlib]},
-  {env, []}
- ]}.
+{application,sqlite3,
+             [{description,"SQLite3 Interface"},
+              {vsn,"1.2.0"},
+              {modules,[]},
+              {registered,[]},
+              {applications,[kernel,stdlib]},
+              {env,[]}]}.

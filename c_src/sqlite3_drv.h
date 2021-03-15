@@ -9,14 +9,14 @@
 #include <erl_driver.h>
 #include <erl_interface.h>
 #include <ei.h>
-#include <sqlite3.h>
+#include "sqlite3.h"
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
 #include <assert.h>
 
-#if SQLITE_VERSION_NUMBER < 3006001
-#error "SQLite3 of version 3.6.1 minumum required"
+#if SQLITE_VERSION_NUMBER < 3035000
+#error "SQLite3 of version 3.35.0 minumum required"
 #endif
 
 // pre-R15B
