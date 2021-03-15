@@ -17,7 +17,7 @@ test:
 	$(REBAR_COMPILE) eunit
 
 clean:
-	-rm -rf deps ebin priv/*.so doc/* .eunit/* c_src/*.o config.tmp
+	-rm -rf deps ebin priv/*.so doc/* .eunit/* c_src/*.o sqlite3_amalgamation/*.o config.tmp
 
 docs:
 	$(REBAR_COMPILE) doc
