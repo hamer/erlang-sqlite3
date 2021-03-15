@@ -4,14 +4,13 @@ PLT=dialyzer\sqlite3.plt
 
 all: compile
 
-compile: sqlite3.dll sqlite3.lib
+compile:
 	$(REBAR_COMPILE)
 
-debug: sqlite3.dll sqlite3.lib
+debug:
 	$(REBAR_COMPILE) -C rebar.debug.config
 
-tests: compile sqlite3.dll
-	cp sqlite3.dll priv
+tests: compile
 	rebar skip-deps=true eunit
 
 clean:
@@ -35,9 +34,3 @@ static: compile
 
 cross_compile: clean
 	$(REBAR_COMPILE) -C rebar.cross_compile.config
-
-sqlite3.dll: sqlite3_amalgamation\sqlite3.c sqlite3_amalgamation\sqlite3.h
-	cl /O2 sqlite3_amalgamation\sqlite3.c /Isqlite3_amalgamation /link /dll /out:sqlite3.dll
-
-sqlite3.lib: sqlite3.dll
-	lib /out:sqlite3.lib sqlite3.obj
